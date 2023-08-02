@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />-->
+    <style>
+      #test-output1, #test-output2{
+        border: 2px palevioletred solid;
+      }
+      .top{
+        background-color: rgb(5, 5, 45);
+        color: palevioletred;
+        text-align: center;
+      }
+      .chumma{
+        display: inline-flex;
+        padding: 50px;
+      }
+      body{
+        width: 800px;
+        text-align: center;
+        display: flex;
+        padding-left: 300px;
+        padding-right: 10px;
+
+      }
+      
+    </style>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+  
+  <body>
+    <div class="ajay">  
+      <div class="top"><h1>Ceasar Chipher</h1>
+      <div class="chumma">
+        <h3><label for="test-input1">For Encryption :</label></h3><br>
+    <input type="text" name="test-input1" id="test-input1" style="width: 200px;" placeholder="Type input here..."/>
+    <button id="submit-button1" type="submit" pys-onClick="my_function1">OK</button>
+    <div id="test-output1" style="width: 200px; height: 50px;"></div>
+      </div><br>
+    <div class="chumma">
+      <h3><label for="test-input2">For Decryption :</label></h3><br>
+    <input type="text" name="test-input2" id="test-input2" style="width: 200px;" placeholder="Type input here..."/>
+    <button id="submit-button2" type="submit" pys-onClick="my_function2">OK</button>
+    <div id="test-output2" style="width: 200px; height: 50px;"></div>
+    </div>
+    </div>
+  </div>
+  
+  <py-script>
+  from js import console
+  
+  def my_function1(*args, **kwargs):
+  
+      #print('args:', args)
+      #print('kwargs:', kwargs)
+  
+      console.log(f'args: {args}')
+      console.log(f'kwargs: {kwargs}')
+      
+      text1 = Element('test-input1').element.value
+  
+      #print('text:', text)
+      #console.log(f'text: {text}')
+  
+      #Element('test-output1').element.innerText = text
+      a1=text1
+      b1=''
+      for i in a1:
+            temp1 = ord(i)
+            if 65 <= temp1 <= 87:  
+                temp1 = temp1 + 4
+        
+            elif 88 <= temp1 <= 90: 
+              temp1 = temp1 - 22
+        
+            elif 97 <= temp1 <= 119: 
+              temp1 = temp1 + 4
+        
+            elif 120 <= temp1 <= 122: 
+               temp1 = temp1 - 22
+            elif temp1<65 or temp1>122:
+               b1=''
+               #print('enter alphabetical characters only')
+               Element('test-output1').element.innerText = b1
+               break
+
+            temp1 = chr(temp1)
+            b1=b1+temp1
+
+      Element('test-output1').element.innerText = b1
+
+  #completed
+
+  def my_function2(*args, **kwargs):
+  
+      #print('args:', args)
+      #print('kwargs:', kwargs)
+  
+      console.log(f'args: {args}')
+      console.log(f'kwargs: {kwargs}')
+      
+      text2 = Element('test-input2').element.value
+  
+      #print('text:', text)
+      #console.log(f'text: {text}')
+  
+      #Element('test-output1').element.innerText = text
+      a2=text2
+      b2=''
+      for j in a2:
+            temp2 = ord(j)
+            if 69 <= temp2 <= 90:  
+                temp2 = temp2 - 4
+        
+            elif 65 <= temp2 <= 88: 
+              temp2 = temp2 + 22
+        
+            elif 101 <= temp2 <= 122: 
+              temp2 = temp2 - 4
+        
+            elif 97 <= temp2 <= 100: 
+               temp2 = temp2 + 22
+            elif temp2<65 or temp2>122:
+               b2=''
+               #print('enter alphabetical characters only')
+               Element('test-output2').element.innerText = b2
+               break
+
+            temp2 = chr(temp2)
+            b2=b2+temp2
+
+      Element('test-output2').element.innerText = b2
+
+
+  </py-script>
+  
+    </body>
+            </html>
