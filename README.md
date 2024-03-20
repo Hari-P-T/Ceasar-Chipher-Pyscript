@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a web-based tool that allows you to encrypt and decrypt messages using the Caesar Cipher algorithm. It provides a user-friendly interface where you can enter a text, choose whether to encrypt or decrypt, and see the corresponding output.
+This is a web-based tool that allows you to encrypt and decrypt messages using the Caesar Cipher algorithm. It provides a user-friendly interface  where you can enter a text, choose whether to encrypt or decrypt, and see the corresponding output.
 
 ## How to Use
 
